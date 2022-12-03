@@ -17,7 +17,11 @@ defmodule NsdrWeb.Router do
   scope "/", NsdrWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
+    get "/", StepController, :step1
+    get "/step2", StepController, :step2
+    #get "/step2", Step2Controller, :index
+    #get "/step3", Step3Controller, :index
+    #get "/play", PlayController, :index
   end
 
   # Other scopes may use custom stacks.
