@@ -19,7 +19,8 @@ defmodule NsdrWeb.Router do
 
     get "/", StepController, :step1
     get "/step2", StepController, :step2
-    #get "/step2", Step2Controller, :index
+    get "/step3", StepController, :step3
+    get "/play", StepController, :play
     #get "/step3", Step3Controller, :index
     #get "/play", PlayController, :index
   end
