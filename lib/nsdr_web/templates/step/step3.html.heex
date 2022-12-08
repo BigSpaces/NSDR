@@ -14,7 +14,7 @@
 
 </head>
 <body>
-    <div class="header-top">
+     <div class="header-top">
         <div class="container">
             <div class="row">
                 <div class="left">
@@ -42,19 +42,20 @@
             <br>
             <div class="row">
                 <div class="col text-center">
-                    <a href="page4.html" class="btn1">Just silence</a>
+                    <%= link("Just Silence", to: Routes.step_path(@conn, :play, choice1: @incoming_params["choice1"] , time: @incoming_params["time"], background: "silence"), class: "btn1") %>
                 </div>
 
                 <div class="col text-center">
-                    <a href="#" class="btn1">Music</a>
+                    <%= link("Music", to: Routes.step_path(@conn, :play, choice1: @incoming_params["choice1"] , time: @incoming_params["time"], background: "Music"), class: "btn1") %>
+
                 </div>
 
                 <div class="col text-center">
-                    <a href="#" class="btn1">Ambient</a>
+                      <%= link("8D Ambient", to: Routes.step_path(@conn, :play, choice1: @incoming_params["choice1"] , time: @incoming_params["time"], background: "Ambient"), class: "btn1") %>
                 </div>
 
                 <div class="col text-center">
-                    <a href="#" class="btn1">Binaural Beats</a>
+                     <%= link("Binaural Beats", to: Routes.step_path(@conn, :play, choice1: @incoming_params["choice1"] , time: @incoming_params["time"], background: "BinauralBeats"), class: "btn1") %>
                 </div>
             </div>
         </div>

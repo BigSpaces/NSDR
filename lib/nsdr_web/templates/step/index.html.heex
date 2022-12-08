@@ -41,44 +41,42 @@
             <br>
             <div class="row">
                 <div class="col text-center">
-                    <a href="page2.html" class="btn1">Deep Rest</a>
-
-                    <%= link("Deep Rest SLEEEEEEEP!", to: Routes.step_path(@conn, :step2, choice1: "deep_rest", time: "40min", background: "music"), class: "btn1") %>
+                    <%= link("Deep Rest", to: Routes.step_path(@conn, :step2, choice1: "nidra", time: "", background: ""), class: "btn1") %>
                     <p class="fs-14 mb-0">NSDR / Nidra will provide a deep rest from the inside out. You may or may not fall asleep, but rest you will!</p>
                 </div>
 
                 <div class="col text-center">
-                    <a href="#" class="btn1">Inner Silence</a>
+                    <%= link("Inner Silence", to: Routes.step_path(@conn, :step2, choice1: "antar", time: "", background: ""), class: "btn1") %>
                     <p class="fs-14 mb-0">Practices to quiet the mind. Release the hold the constant chatter has over our life. Train your detachment and awareness.</p>
                 </div>
 
                 <div class="col text-center">
-                    <a href="#" class="btn1">Recharge (defocus)</a>
+                    <%= link("Recharge (defocus)", to: Routes.step_path(@conn, :step2, choice1: "defocus", time: "", background: ""), class: "btn1") %>
                     <p class="fs-14 mb-0">If you have been using your mind in an intense, concentrated way, this practice will provide a counter-balance and allow you to recharge.</p>
                 </div>
 
                 <div class="col text-center">
-                    <a href="#" class="btn1">Recharge (refocus)</a>
+                    <%= link("Recharge (refocus)", to: Routes.step_path(@conn, :step2, choice1: "refocus", time: "", background: ""), class: "btn1") %>
                     <p class="fs-14 mb-0">Use these practices to train your mind to focus more sharply. Short practices are recommended right before you are about to need to perform mentally.</p>
                 </div>
 
                 <div class="col text-center">
-                    <a href="#" class="btn1">Hypnosis</a>
+                    <%= link("Hypnosis", to: Routes.step_path(@conn, :step2, choice1: "hypnosis", time: "", background: ""), class: "btn1") %>
                     <p class="fs-14 mb-0">The apex of western mind-based therapeautic practices: befriend and talk directly to the depths of your mind: gain clarity, solve problems, break habits and achieve goals! </p>
                 </div>
 
                 <div class="col text-center">
-                    <a href="#" class="btn1">Therapeautic</a>
+                    <%= link("Therapeautic", to: Routes.step_path(@conn, :step2, choice1: "therapy", time: "", background: ""), class: "btn1") %>
                     <p class="fs-14 mb-0">Go beyond resting and relaxing: learn to provide yourself an inner space where healing can happen naturally.</p>
                 </div>
 
                 <div class="col text-center">
-                    <a href="#" class="btn1">Visualization</a>
+                    <%= link("Visualization", to: Routes.step_path(@conn, :step2, choice1: "visualize", time: "", background: ""), class: "btn1") %>
                     <p class="fs-14 mb-0">Go on holidays with your imagination.</p>
                 </div>
 
                 <div class="col text-center">
-                    <a href="#" class="btn1">Surprise Me!</a>
+                    <%= link("Surprise me!", to: Routes.step_path(@conn, :step2, choice1: "random", time: "", background: ""), class: "btn1") %>
                     <p class="fs-14 mb-0">Ta da!</p>
                 </div>
             </div>

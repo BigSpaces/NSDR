@@ -13,13 +13,15 @@
 
 
 </head>
+
+
 <body>
     <div class="header-top">
         <div class="container">
             <div class="row">
                 <div class="left">
                     <h1 class="mb-0"><a href="index.html">Nidra Online</a></h1>
-                    <%= inspect(@incoming_params) %>
+
                 </div>
                 <div class="right">
                     <p class="mb-0">A resource for deepening your relationship to your mind, your rest, and your inner life.</p>
@@ -43,36 +45,35 @@
             <br>
             <div class="row">
                 <div class="col text-center">
-                    <a href="page3.html" class="btn1">Short - 1 to 5mins</a>
+                   <%= link("Short - 1 to 5mins", to: Routes.step_path(@conn, :step3, choice1: @incoming_params["choice1"] , time: "shortest", background: ""), class: "btn1") %>
                 </div>
 
                 <div class="col text-center">
-                    <a href="#" class="btn1">5 to 10 mins</a>
+                    <%= link("5 to 10 mins", to: Routes.step_path(@conn, :step3, choice1: @incoming_params["choice1"] , time: "short", background: ""), class: "btn1") %>
                 </div>
 
                 <div class="col text-center">
-                    <a href="#" class="btn1">15 mins</a>
+                   <%= link("15 mins", to: Routes.step_path(@conn, :step3, choice1: @incoming_params["choice1"] , time: "15mins", background: ""), class: "btn1") %>
+
                 </div>
 
                 <div class="col text-center">
-                    <a href="#" class="btn1">25 - 30 mins</a>
+                    <%= link("25 - 30 mins", to: Routes.step_path(@conn, :step3, choice1: @incoming_params["choice1"] , time: "30mins", background: ""), class: "btn1") %>
                 </div>
 
                 <div class="col text-center">
-                    <a href="#" class="btn1">30 - 45 mins</a>
+                    <%= link("45 mins", to: Routes.step_path(@conn, :step3, choice1: @incoming_params["choice1"] , time: "45mins", background: ""), class: "btn1") %>
                 </div>
 
                 <div class="col text-center">
-                    <a href="#" class="btn1">45 mins to 1 hour</a>
-                </div>
+                    <%= link("1 hour", to: Routes.step_path(@conn, :step3, choice1: @incoming_params["choice1"] , time: "1hr", background: ""), class: "btn1") %>
+             </div>
 
                 <div class="col text-center">
-                    <a href="#" class="btn1">1 hour</a>
-                </div>
+                    <%= link("1,5 hours", to: Routes.step_path(@conn, :step3, choice1: @incoming_params["choice1"] , time: "15hrs", background: ""), class: "btn1") %>
+             </div>
 
-                <div class="col text-center">
-                    <a href="#" class="btn1">1.5 hour</a>
-                </div>
+
             </div>
         </div>
     </div>

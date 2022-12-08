@@ -10,9 +10,9 @@ defmodule NsdrWeb.StepController do
     render(conn, "step2.html", incoming_params: incoming_params)
   end
 
-  def step3(conn, _params) do
+  def step3(conn, incoming_params) do
 
-    render(conn, "step3.html")
+    render(conn, "step3.html", incoming_params: incoming_params)
   end
 
   def play(conn, _params) do
