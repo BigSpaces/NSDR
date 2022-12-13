@@ -1,86 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Nidra Online</title>
+<div class="h-screen w-screen flex h-screen justify-center items-center grid-cols-3">
+<div id="option card" class=" mx-8  w-80 border-4 border-neutral-200 h-48 rounded-md bg-slate-300  divide-y">
 
-    <link rel="stylesheet" type="text/css" href="css/nsdr.css">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-</head>
-<body>
-    <div class="header-top">
-        <div class="container">
-            <div class="row">
-                <div class="left">
-                    <h1 class="mb-0"><a href="index.html">Nidra Online</a></h1>
-                </div>
-                <div class="right">
-                    <p class="mb-0">A resource for deepening your relationship to your mind, your rest, and your inner life.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div>
-        <div class="container2">
-            <hr>
-        </div>
-    </div>
-
-    <div class="section-01">
-        <div class="container">
-            <p class="text-center">What would you like to work on today?</p>
-            <p class="fs-14 text-center">page 1 of 3</p>
-            <br>
-            <br>
-            <br>
-            <div class="row">
-                <div class="col text-center">
-                    <%= link("Deep Rest", to: Routes.step_path(@conn, :step2, choice1: "nidra", time: "", background: ""), class: "btn1") %>
-                    <p class="fs-14 mb-0">NSDR / Nidra will provide a deep rest from the inside out. You may or may not fall asleep, but rest you will!</p>
-                </div>
-
-                <div class="col text-center">
-                    <%= link("Inner Silence", to: Routes.step_path(@conn, :step2, choice1: "antar", time: "", background: ""), class: "btn1") %>
-                    <p class="fs-14 mb-0">Practices to quiet the mind. Release the hold the constant chatter has over our life. Train your detachment and awareness.</p>
-                </div>
-
-                <div class="col text-center">
-                    <%= link("Recharge (defocus)", to: Routes.step_path(@conn, :step2, choice1: "defocus", time: "", background: ""), class: "btn1") %>
-                    <p class="fs-14 mb-0">If you have been using your mind in an intense, concentrated way, this practice will provide a counter-balance and allow you to recharge.</p>
-                </div>
-
-                <div class="col text-center">
-                    <%= link("Recharge (refocus)", to: Routes.step_path(@conn, :step2, choice1: "refocus", time: "", background: ""), class: "btn1") %>
-                    <p class="fs-14 mb-0">Use these practices to train your mind to focus more sharply. Short practices are recommended right before you are about to need to perform mentally.</p>
-                </div>
-
-                <div class="col text-center">
-                    <%= link("Hypnosis", to: Routes.step_path(@conn, :step2, choice1: "hypnosis", time: "", background: ""), class: "btn1") %>
-                    <p class="fs-14 mb-0">The apex of western mind-based therapeautic practices: befriend and talk directly to the depths of your mind: gain clarity, solve problems, break habits and achieve goals! </p>
-                </div>
-
-                <div class="col text-center">
-                    <%= link("Therapeautic", to: Routes.step_path(@conn, :step2, choice1: "therapy", time: "", background: ""), class: "btn1") %>
-                    <p class="fs-14 mb-0">Go beyond resting and relaxing: learn to provide yourself an inner space where healing can happen naturally.</p>
-                </div>
-
-                <div class="col text-center">
-                    <%= link("Visualization", to: Routes.step_path(@conn, :step2, choice1: "visualize", time: "", background: ""), class: "btn1") %>
-                    <p class="fs-14 mb-0">Go on holidays with your imagination.</p>
-                </div>
-
-                <div class="col text-center">
-                    <%= link("Surprise me!", to: Routes.step_path(@conn, :step2, choice1: "random", time: "", background: ""), class: "btn1") %>
-                    <p class="fs-14 mb-0">Ta da!</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
-</html>
+    <h3 class="hover:bg-slate-400 pt-4 pb-2 text-xl text-stone-800 text-center font-heebo">
+    <%= link("Nidra / NSDR", to: Routes.step_path(@conn, :step2, choice1: "nidra", time: "", background: "")) %></h3>
+    <p class="p-8 text-stone-800 text-center font-mukta">Enjoy conscious rest. One hour of NSDR or Nidra is said to be equivalent to three hours of sleep</p>
+</div>
+<div id="option card" class=" mx-8 w-80 border-4 border-neutral-200 h-48 rounded-md bg-slate-300  divide-y">
+    <h3 class="hover:bg-slate-400 pt-4 pb-2 text-xl text-stone-800 text-center font-heebo">
+        <%= link("Inner Silence", to: Routes.step_path(@conn, :step2, choice1: "antar", time: "", background: "")) %>
+    </h3>
+    <p class="p-8 text-stone-800 text-center font-mukta">Ventilate your mind. Detach from the mental noise. Cultivate Silence.</p>
+</div>
+<div id="option card" class="mx-8 w-80 border-4 border-neutral-200 h-48 rounded-md bg-slate-300  divide-y">
+    <h3 class="hover:bg-slate-400 pt-4 pb-2 text-xl text-stone-800 text-center font-heebo">
+        <%= link("Body Scan", to: Routes.step_path(@conn, :step2, choice1: "scan", time: "", background: ""))%>
+    </h3>
+    <p class="p-8 text-stone-800 text-center font-mukta">A proven and quick way to relax your body and mind</p>
+</div>
+</div>

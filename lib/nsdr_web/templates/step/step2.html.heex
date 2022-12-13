@@ -1,87 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Nidra Online</title>
+<div class="h-screen w-screen flex h-screen justify-center items-center grid-cols-3">
+<div id="option card" class=" mx-8  w-80 border-4 border-neutral-200 h-48 rounded-md bg-slate-300  divide-y">
 
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-
-</head>
-
-
-<body>
-    <div class="header-top">
-        <div class="container">
-            <div class="row">
-                <div class="left">
-                    <h1 class="mb-0"><a href="index.html">Nidra Online</a></h1>
-
-                </div>
-                <div class="right">
-                    <p class="mb-0">A resource for deepening your relationship to your mind, your rest, and your inner life.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div>
-        <div class="container2">
-            <hr>
-        </div>
-    </div>
-
-    <div class="section-01">
-        <div class="container">
-            <p class="text-center">How long would you like to practice?</p>
-            <p class="fs-14 text-center">page 1 of 2</p>
-            <br>
-            <br>
-            <br>
-            <div class="row">
-                <div class="col text-center">
-                   <%= link("Short - 1 to 5mins", to: Routes.step_path(@conn, :step3, choice1: @incoming_params["choice1"] , time: "shortest", background: ""), class: "btn1") %>
-                </div>
-
-                <div class="col text-center">
-                    <%= link("5 to 10 mins", to: Routes.step_path(@conn, :step3, choice1: @incoming_params["choice1"] , time: "short", background: ""), class: "btn1") %>
-                </div>
-
-                <div class="col text-center">
-                   <%= link("15 mins", to: Routes.step_path(@conn, :step3, choice1: @incoming_params["choice1"] , time: "15mins", background: ""), class: "btn1") %>
-
-                </div>
-
-                <div class="col text-center">
-                    <%= link("25 - 30 mins", to: Routes.step_path(@conn, :step3, choice1: @incoming_params["choice1"] , time: "30mins", background: ""), class: "btn1") %>
-                </div>
-
-                <div class="col text-center">
-                    <%= link("45 mins", to: Routes.step_path(@conn, :step3, choice1: @incoming_params["choice1"] , time: "45mins", background: ""), class: "btn1") %>
-                </div>
-
-                <div class="col text-center">
-                    <%= link("1 hour", to: Routes.step_path(@conn, :step3, choice1: @incoming_params["choice1"] , time: "1hr", background: ""), class: "btn1") %>
-             </div>
-
-                <div class="col text-center">
-                    <%= link("1,5 hours", to: Routes.step_path(@conn, :step3, choice1: @incoming_params["choice1"] , time: "15hrs", background: ""), class: "btn1") %>
-             </div>
-
-
-            </div>
-        </div>
-    </div>
-
-    <div class="bottom">
-        <div class="container2">
-            <p class="mb-0 text-center"><a href="index.html"><i class="fa-solid fa-arrow-left-long"></i> &nbsp; Take me back</a></p>
-        </div>
-    </div>
-</body>
-</html>
+    <h3 class="hover:bg-slate-400 pt-4 pb-2 text-xl text-stone-800 text-center font-heebo">
+    <%= link("Short: 5 to 15 mins", to: Routes.step_path(@conn, :step3, choice1: @incoming_params["choice1"] , time: "short", background: "")) %></h3>
+    <p class="p-8 text-stone-800 text-center font-mukta">Sometimes a few minutes is all you need.</p>
+</div>
+<div id="option card" class=" mx-8 w-80 border-4 border-neutral-200 h-48 rounded-md bg-slate-300  divide-y">
+    <h3 class="hover:bg-slate-400 pt-4 pb-2 text-xl text-stone-800 text-center font-heebo">
+        <%= link("Medium: around 30 minutes", to: Routes.step_path(@conn, :step3, choice1: @incoming_params["choice1"] , time: "30mins", background: "")) %>
+    </h3>
+    <p class="p-8 text-stone-800 text-center font-mukta">A lot can be achieved in 30 minutes of dedicated practice.</p>
+</div>
+<div id="option card" class="mx-8 w-80 border-4 border-neutral-200 h-48 rounded-md bg-slate-300  divide-y">
+    <h3 class="hover:bg-slate-400 pt-4 pb-2 text-xl text-stone-800 text-center font-heebo">
+        <%= link("Long: 1 hour", to: Routes.step_path(@conn, :step3, choice1: @incoming_params["choice1"] , time: "1hr", background: ""))%>
+    </h3>
+    <p class="p-8 text-stone-800 text-center font-mukta">Enough time to go deep and profound!</p>
+</div>
+</div>

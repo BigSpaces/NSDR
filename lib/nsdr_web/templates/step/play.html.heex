@@ -1,45 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Nidra Online</title>
-
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-
-</head>
-<body>
-    <div class="header-top">
-        <div class="container">
-            <div class="row">
-                <div class="left">
-                    <h1 class="mb-0"><a href="index.html">Nidra Online</a></h1>
-                </div>
-                <div class="right">
-                    <p class="mb-0">A resource for deepening your relationship to your mind, your rest, and your inner life.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div>
-        <div class="container2">
-            <hr>
-        </div>
-    </div>
-
-    <div class="section-01">
-        <div class="container2">
-            <p class="text-center">Your practice is ready! </p>
-            <% string = "You have chosen a " <>
+<div class="h-screen w-screen grid justify-center items-center">
+    <p class="text-xl text-center text-slate-50 text-center font-mukta">Your practice is ready! </p>
+        <% string = "You have chosen a " <>
                 case @incoming_params["choice1"] do
                     "therapy" -> "therapeautic practice."
                     "nidra" -> "deep rest practice."
+                    "scan" -> "body scan practice"
                     "defocus" -> "recharging through de-focusing."
                     "refocus" -> "recharging through re-focusing."
                     "hypnosis" -> "self-hypnosis practice."
@@ -69,55 +34,24 @@
                     "binauralbeats" -> "binaural beats for brain entrainment (headphones required)."
                      _ -> "a surprise background soundtrack feature."
                   end  %>
-            <p class="text-center"><%= string %></p>
-            <p>Shut off all distractions. May you benefit from this practice.</p>
+            <p class="text-center text-xl text-slate-50 text-center font-mukta"><%= string %></p>
+            <p class="text-center text-xl text-slate-50 text-center font-mukta">Shut off all distractions. May you benefit from this practice.</p>
+                <div class="w-100">
+
                 <audio controls src="http://localhost/playlist.m3u8">
                     Your browser does not support the <code>audio</code> element.
                 </audio>
-            <br>
-            <br>
-            <br>
-
-            <div class="text-center">
-                <img src="play-icon2.png" alt="" style="width: 100px;">
-            </div>
-
-            <br>
-            <br>
-            <br>
-
-            <p class="text-center">Did you enjoy or benefit from this practice? <br>
-                Provide a voluntary donation and you will receive this very mediation in your inbox.</p>
-
-            <form class="form1" style="width: 380px;margin: auto;margin-top: 15px;">
-                <div class="form-row">
-                    <div class="form-col text-center">
-                        <input type="text" placeholder="Name" class="form-control">
-                    </div>
-
-                    <div class="form-col text-center">
-                        <input type="text" placeholder="email" class="form-control">
-                    </div>
                 </div>
-                <br>
-                <div class="text-center">
-                    <a href="#" class="btn2">Donate & Receive</a>
-                </div>
-            </form>
+            <br>
+            <br>
+            <br>
+
+
 
             <br>
             <br>
 
-            <p class="text-center">There is too much tension in the world, so consider telling others about this page.</p>
+            <p class="text-center text-xl text-slate-50 text-center font-mukta">There is too much tension in the world, so consider telling others about this page.</p>
 
-            <div class="social">
-                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-            </div>
 
         </div>
-    </div>
-</body>
-</html>
