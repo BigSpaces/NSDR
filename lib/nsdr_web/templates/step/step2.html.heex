@@ -1,0 +1,20 @@
+<div class="h-screen w-screen flex h-screen justify-center items-center grid-cols-3">
+<div id="option card" class=" mx-8  w-80 border-4 border-neutral-200 h-48 rounded-md bg-slate-300  divide-y">
+
+    <h3 class="hover:bg-slate-400 pt-4 pb-2 text-xl text-stone-800 text-center font-heebo">
+    <%= link("Short: 5 to 15 mins", to: Routes.step_path(@conn, :step3, choice1: @incoming_params["choice1"] , time: "short", background: "")) %></h3>
+    <p class="p-8 text-stone-800 text-center font-mukta">Sometimes a few minutes is all you need.</p>
+</div>
+<div id="option card" class=" mx-8 w-80 border-4 border-neutral-200 h-48 rounded-md bg-slate-300  divide-y">
+    <h3 class="hover:bg-slate-400 pt-4 pb-2 text-xl text-stone-800 text-center font-heebo">
+        <%= link("Medium: around 30 minutes", to: Routes.step_path(@conn, :step3, choice1: @incoming_params["choice1"] , time: "30mins", background: "")) %>
+    </h3>
+    <p class="p-8 text-stone-800 text-center font-mukta">A lot can be achieved in 30 minutes of dedicated practice.</p>
+</div>
+<div id="option card" class="mx-8 w-80 border-4 border-neutral-200 h-48 rounded-md bg-slate-300  divide-y">
+    <h3 class="hover:bg-slate-400 pt-4 pb-2 text-xl text-stone-800 text-center font-heebo">
+        <%= link("Long: 1 hour", to: Routes.step_path(@conn, :step3, choice1: @incoming_params["choice1"] , time: "1hr", background: ""))%>
+    </h3>
+    <p class="p-8 text-stone-800 text-center font-mukta">Enough time to go deep and profound!</p>
+</div>
+</div>

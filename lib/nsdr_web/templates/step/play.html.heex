@@ -1,0 +1,57 @@
+<div class="h-screen w-screen grid justify-center items-center">
+    <p class="text-xl text-center text-slate-50 text-center font-mukta">Your practice is ready! </p>
+        <% string = "You have chosen a " <>
+                case @incoming_params["choice1"] do
+                    "therapy" -> "therapeautic practice."
+                    "nidra" -> "deep rest practice."
+                    "scan" -> "body scan practice"
+                    "defocus" -> "recharging through de-focusing."
+                    "refocus" -> "recharging through re-focusing."
+                    "hypnosis" -> "self-hypnosis practice."
+                    "visualization" -> "visualization practice."
+                    "random" -> "surprise practice :)."
+                                        _ -> "practice."
+                    end
+                    <> " It will take you " <>
+
+                case @incoming_params["time"] do
+                    "shortest" -> "less than five minutes."
+                    "short" -> "between 5 and 10 minutes."
+                    "15mins" -> "just 15 minutes."
+                    "30mins" -> "about half an hour."
+                    "45mins" -> "15 minutes."
+                    "1hr" -> "one full hour."
+                    "15" -> "one and a half hours."
+                    _ -> "whatever time it takes you to complete."
+                                        end
+
+                    <> " You will enjoy " <>
+
+                     case @incoming_params["background"] do
+                    "silence" -> "perfect silence in the background."
+                    "music" -> "some nice background music."
+                    "ambient" -> "virtual surround, 8D ambient sounds (headphones required)."
+                    "binauralbeats" -> "binaural beats for brain entrainment (headphones required)."
+                     _ -> "a surprise background soundtrack feature."
+                  end  %>
+            <p class="text-center text-xl text-slate-50 text-center font-mukta"><%= string %></p>
+            <p class="text-center text-xl text-slate-50 text-center font-mukta">Shut off all distractions. May you benefit from this practice.</p>
+                <div class="w-100">
+
+                <audio controls src="http://localhost/playlist.m3u8">
+                    Your browser does not support the <code>audio</code> element.
+                </audio>
+                </div>
+            <br>
+            <br>
+            <br>
+
+
+
+            <br>
+            <br>
+
+            <p class="text-center text-xl text-slate-50 text-center font-mukta">There is too much tension in the world, so consider telling others about this page.</p>
+
+
+        </div>

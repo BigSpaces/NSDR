@@ -1,0 +1,20 @@
+<div class="h-screen w-screen flex h-screen justify-center items-center grid-cols-3">
+<div id="option card" class=" mx-8  w-80 border-4 border-neutral-200 h-48 rounded-md bg-slate-300  divide-y">
+
+    <h3 class="hover:bg-slate-400 pt-4 pb-2 text-xl text-stone-800 text-center font-heebo">
+    <%= link("Silence", to: Routes.step_path(@conn, :play, choice1: @incoming_params["choice1"] , time: @incoming_params["time"], background: "silence")) %></h3>
+    <p class="p-8 text-stone-800 text-center font-mukta">No music, no ambient track. Zip, nada.</p>
+</div>
+<div id="option card" class=" mx-8 w-80 border-4 border-neutral-200 h-48 rounded-md bg-slate-300  divide-y">
+    <h3 class="hover:bg-slate-400 pt-4 pb-2 text-xl text-stone-800 text-center font-heebo">
+        <%= link("Music", to: Routes.step_path(@conn, :play, choice1: @incoming_params["choice1"] , time: @incoming_params["time"], background: "music")) %>
+    </h3>
+    <p class="p-8 text-stone-800 text-center font-mukta">Let ambient music take you places</p>
+</div>
+<div id="option card" class="mx-8 w-80 border-4 border-neutral-200 h-48 rounded-md bg-slate-300  divide-y">
+    <h3 class="hover:bg-slate-400 pt-4 pb-2 text-xl text-stone-800 text-center font-heebo">
+        <%= link("8D Ambient", to: Routes.step_path(@conn, :play, choice1: @incoming_params["choice1"] , time: @incoming_params["time"], background: "ambient"))%>
+    </h3>
+    <p class="p-8 text-stone-800 text-center font-mukta">Background effects track to place your mind in a different environment</p>
+</div>
+</div>

@@ -1,0 +1,20 @@
+<div class="h-screen w-screen flex h-screen justify-center items-center grid-cols-3">
+<div id="option card" class=" mx-8  w-80 border-4 border-neutral-200 h-48 rounded-md bg-slate-300  divide-y">
+
+    <h3 class="hover:bg-slate-400 pt-4 pb-2 text-xl text-stone-800 text-center font-heebo">
+    <%= link("Nidra / NSDR", to: Routes.step_path(@conn, :step2, choice1: "nidra", time: "", background: "")) %></h3>
+    <p class="p-8 text-stone-800 text-center font-mukta">Enjoy conscious rest. One hour of NSDR or Nidra is said to be equivalent to three hours of sleep</p>
+</div>
+<div id="option card" class=" mx-8 w-80 border-4 border-neutral-200 h-48 rounded-md bg-slate-300  divide-y">
+    <h3 class="hover:bg-slate-400 pt-4 pb-2 text-xl text-stone-800 text-center font-heebo">
+        <%= link("Inner Silence", to: Routes.step_path(@conn, :step2, choice1: "antar", time: "", background: "")) %>
+    </h3>
+    <p class="p-8 text-stone-800 text-center font-mukta">Ventilate your mind. Detach from the mental noise. Cultivate Silence.</p>
+</div>
+<div id="option card" class="mx-8 w-80 border-4 border-neutral-200 h-48 rounded-md bg-slate-300  divide-y">
+    <h3 class="hover:bg-slate-400 pt-4 pb-2 text-xl text-stone-800 text-center font-heebo">
+        <%= link("Body Scan", to: Routes.step_path(@conn, :step2, choice1: "scan", time: "", background: ""))%>
+    </h3>
+    <p class="p-8 text-stone-800 text-center font-mukta">A proven and quick way to relax your body and mind</p>
+</div>
+</div>
