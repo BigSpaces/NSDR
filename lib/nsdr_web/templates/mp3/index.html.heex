@@ -1,0 +1,13 @@
+<p>Hello World And Mars!</p>
+
+<audio
+        controls
+        src={Routes.static_path(@conn, "/assets/drone.mp3")}>
+            <a href={Routes.static_path(@conn, "/assets/drone.mp3")}>
+                Download audio
+            </a>
+    </audio>
+
+<audio src={Routes.static_path(@conn, "/assets/drone.mp3")}>
+    Your browser does not support the <code>audio</code> element.
+</audio>

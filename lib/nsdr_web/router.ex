@@ -8,6 +8,7 @@ defmodule NsdrWeb.Router do
     plug :put_root_layout, {NsdrWeb.LayoutView, :root}
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+   # plug NsdrWeb.Mp3Plug
   end
 
   pipeline :api do
@@ -21,6 +22,8 @@ defmodule NsdrWeb.Router do
     get "/step2", StepController, :step2
     get "/step3", StepController, :step3
     get "/play", StepController, :play
+    get "/mp3", Mp3Controller, :index
+
     #get "/step3", Step3Controller, :index
     #get "/play", PlayController, :index
   end
