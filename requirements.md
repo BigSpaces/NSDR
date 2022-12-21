@@ -45,28 +45,38 @@ The software will be able to craft personalised meditation practices based on us
 
 ### Choosing your meditation
 
-A user visits the home page and three questions are asked:
+STEP 1. A user visits the home page and three questions are asked related to the type of practice:
 
-1. Which type of practice you want? At the moment the user can choose between...
+Which type of practice you want? At the moment the user can choose between...
   - Nidra (also called NSDR in the scientific community)
   - Antar (inner silence practice)
   - Body Scan (a relaxation technique for the body which helps with insomnia and retrains the nervous system to diffuse habitual tensions)
 
-The user selects one, and the next page automatically loads, which presents the second set of options:
+The user selects one by clicking at the option.
 
-2. How long do you have to practice?
+STEP 2. The next page automatically loads, which presents the second set of options, related to length:
+
+How long do you have to practice?
   - Short (5 to 10 mins)
   - Medium (half an hour)
   - Long (an hour)
 
-Upon selecting this option, a third page is shown:
+Upon selecting this option
 
-3. What type of background track do you prefer?
+STEP 3. The third page is shown, to choose background music or sound:
+
+What type of background track do you prefer?
   - Silence
   - Music
   - Ambient 8D sounds (ocean, rain, forest sounds...)
 
-Once the user chooses this third option, another page is loaded where the user is presented with a summary of his choices, and a play button to stream his customised practice session.
+
+STEP 4. The fourth (and final) page presents the user with:
+  - A description of the practice, based on his choices.
+  - A play button
+
+The user will be able to stream his bespoke practice by clicking the play button.
+
 
 
 ## To be completed
