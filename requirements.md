@@ -40,25 +40,33 @@ The current version of the software is devised as a proof of concept, a test to 
 
 The software will be able to craft personalised meditation practices based on user preferences and availability of time. It will do so through combining pre-recorded audio snippets and streaming them to the browser or app on user request.
 
-Three questions are asked to the user:
 
-1. Which type of practice you want? At the moment, three are offered:
+## Use cases
+
+### Choosing your meditation
+
+A user visits the home page and three questions are asked:
+
+1. Which type of practice you want? At the moment the user can choose between...
   - Nidra (also called NSDR in the scientific community)
   - Antar (inner silence practice)
   - Body Scan (a relaxation technique for the body which helps with insomnia and retrains the nervous system to diffuse habitual tensions)
+
+The user selects one, and the next page automatically loads, which presents the second set of options:
 
 2. How long do you have to practice?
   - Short (5 to 10 mins)
   - Medium (half an hour)
   - Long (an hour)
 
-3. What type of background you prefer)
+Upon selecting this option, a third page is shown:
+
+3. What type of background track do you prefer?
   - Silence
   - Music
-  - Ambient 8D sounds
+  - Ambient 8D sounds (ocean, rain, forest sounds...)
 
-
-The software will access categorised mp3 and deliver a meditation practice based on these preferences.
+Once the user chooses this third option, another page is loaded where the user is presented with a summary of his choices, and a play button to stream his customised practice session.
 
 
 ## To be completed
