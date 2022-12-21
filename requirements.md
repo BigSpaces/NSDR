@@ -1,18 +1,12 @@
-## Title
+## NSDR Online
 
-NSDR Online
 
-## Author
 
-BigSpaces
 
-## Date
+|Author|Date|State|
+|------|------|----|
+|BigSpaces|December 2022|Draft| 
 
-December 2022 / January 2023
-
-## State
-
-Draft
 
 ## Motivation
 
@@ -77,6 +71,21 @@ STEP 4. The fourth (and final) page presents the user with:
 
 The user will be able to stream his bespoke practice by clicking the play button.
 
+Here is the sequence diagram for this use case
+
+```mermaid
+sequenceDiagram
+    User->>+System: Start of use - Home page
+    System-->>-User: Presentation of options - type of practice
+    User1->>+System1: Type of practice chosen
+    System1-->>-User1: Presentation of options - length of practice
+    User1->>+System1: Length option chosen
+    System1-->>-User1: Presentation of options - Background track
+    User1->>+System1: Background track chosen
+    System1-->>-User1: Description of practice + Option to play audio stream
+    User1->>+System1: Press play
+    System1-->>-User1: Audio stream starts
+```
 
 
 ## To be completed
