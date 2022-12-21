@@ -77,14 +77,14 @@ Here is the sequence diagram for this use case
 sequenceDiagram
     User->>+System: Start of use - Home page
     System-->>-User: Presentation of options - type of practice
-    User1->>+System1: Type of practice chosen
-    System1-->>-User1: Presentation of options - length of practice
-    User1->>+System1: Length option chosen
-    System1-->>-User1: Presentation of options - Background track
-    User1->>+System1: Background track chosen
-    System1-->>-User1: Description of practice + Option to play audio stream
-    User1->>+System1: Press play
-    System1-->>-User1: Audio stream starts
+    User->>+System: Type of practice chosen
+    System-->>-User: Presentation of options - length of practice
+    User->>+System: Length option chosen
+    System-->>-User: Presentation of options - Background track
+    User->>+System: Background track chosen
+    System-->>-User: Description of practice + Option to play audio stream
+    User->>+System: Press play
+    System-->>-User: Audio stream starts
 ```
 
 
