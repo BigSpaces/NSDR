@@ -91,6 +91,21 @@ sequenceDiagram
 ## To be completed
 -----------------------------------------------
 
+## Project Proposal ("I want to make this, no details")
+
+## Requirements
+
+## Constraints
+
+I will not spend more than XXX hours before I decide on the viability of the project
+I am never going to publish private API keys on public forums
+
+## Assumptions
+
+I assume I have access to a server that can run Elixir and Phoenix
+I assume everything will run locally during development
+I assume I can deploy this on fly.io
+
 Use Cases
 Personas
 Diagrams
