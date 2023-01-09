@@ -13,7 +13,7 @@ defmodule NsdrWeb.Mp3Controller do
     # File.stream!(mp3, [], @chunk_size)
     # |> Enum.into(conn)
 
-    render(conn, "index.html")
+    render(conn, "index.html", [mykey: "My MP3"])
   end
 
 end

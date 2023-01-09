@@ -36,6 +36,7 @@
     <div class="section-01">
         <div class="container2">
             <p class="text-center">Your practice is ready! </p>
+            
             <% string = "You have chosen a " <>
                 case @incoming_params["choice1"] do
                     "therapy" -> "therapeautic practice."
@@ -71,10 +72,13 @@
                      _ -> "a surprise background soundtrack feature."
                   end  %>
             <p class="text-center"><%= string %></p>
-            <p>Shut off all distractions. May you benefit from this practice.</p>
-                <audio controls src="http://localhost/playlist.m3u8">
-                    Your browser does not support the <code>audio</code> element.
-                </audio>
+           <audio
+        controls
+        src={Routes.static_path(@conn, "/assets/audio/drone.mp3")}>
+            <a href={Routes.static_path(@conn, "/assets/audio/drone.mp3")}>
+                Download audio
+            </a>
+    </audio>
             <br>
             <br>
             <br>
