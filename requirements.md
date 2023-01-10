@@ -87,6 +87,24 @@ sequenceDiagram
     System-->>-User: Audio stream starts
 ```
 
+### Signing up for news and future updates
+
+STEP 1: The user has completed choosing the type of meditative practice, which serves as a pre-qualifier of interest. Together with the option to play the meditation, a sign-up form is shown.
+
+- "Provide your name and email and we will keep you posted of new practices and valuable information to help you make your mind your ally"
+
+STEP 2: The user enters name, email, agrees with the terms and conditions, and clicks submit.
+
+- The form validates the formatting of the data, as well as the agreement with the terms and conditions. If correct, a success message is shown. If incorrect, a message offering what needs to be corrected will be shown.
+
+```mermaid
+sequenceDiagram
+    User->>+System: Play Page - Selection of meditation options completed
+    System-->>-User: Sign Up form shown
+    User->>+System: User provides name, email and agreement
+    System-->>-User: Confirmation of signup or formatting not valid
+```
+
 
 ## To be completed
 -----------------------------------------------
