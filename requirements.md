@@ -86,7 +86,7 @@ sequenceDiagram
     User->>+System: Press play
     System-->>-User: Audio stream starts
 ```
-
+-----------------------------------------------
 ### Signing up for news and future updates
 
 STEP 1: The user has completed choosing the type of meditative practice, which serves as a pre-qualifier of interest. Together with the option to play the meditation, a sign-up form is shown.
@@ -104,18 +104,24 @@ sequenceDiagram
     User->>+System: User provides name, email and agreement
     System-->>-User: Confirmation of signup or formatting not valid
 ```
-
-
-## To be completed
 -----------------------------------------------
+### To be implemented - User accounts (Roadmap)
 
-## Project Proposal ("I want to make this, no details")
+STEP 1: The website permanently shows the option to create an account in the header of the site.
 
-## Requirements
+- User is informed of the features that are accessed (and could be accessed in the future) by creating an account:
+- - FREE: Practice calendar 
+- - FREE: Statistics of practices
+- - FREE: Discounted access to courses and transformational processes
+- - FREE: Discounted access to one on one coaching
+- - PAID MEMBERSHIP: Access to requests of personalized meditations
+- - PAID MEMBERSHIP: Access to an exclusive mobile app
+- - PAID MEMBERSHIP: Access to exclusive Q&A sessions with the creators 
 
+-----
 ## Constraints
 
-I will not spend more than XXX hours before I decide on the viability of the project
+I will not develop an email sending system on my own, but will use an external email system (Mailchimp-like)
 I am never going to publish private API keys on public forums
 
 ## Assumptions
