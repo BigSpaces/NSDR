@@ -1,3 +1,4 @@
+
 <div class="h-screen w-screen grid justify-center items-center">
     <p class="text-xl text-center text-slate-50 text-center font-mukta">Your practice is ready! </p>
         <% string = "You have chosen a " <>
@@ -53,11 +54,10 @@
 
             <p class="text-center text-xl text-slate-50 text-center font-mukta">There is too much tension in the world, so consider telling others about this page.</p>
 
-            <div><%= form_for dummy_f, Routes.user_path(, :signup), fn f -> %>
-  Name: <%= text_input f, :name %>
-  email: <%= text_input f, :email %>
-  <div>
-    <%= submit "Save" %>
-  </div>
-<% end %></div>
+           <p class="text-center text-xl text-slate-50 text-center font-mukta">Stay in tune with the news...</p>
+
+<div class="text-center text-xl text-slate-50 text-center font-mukta">
+<%= render "form.html", Map.put(assigns, :action, Routes.subscriber_path(@conn, :create)) %>
+
+<span><%= link "Back", to: Routes.subscriber_path(@conn, :index) %></span></div>
         </div>

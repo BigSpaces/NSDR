@@ -23,8 +23,9 @@ defmodule NsdrWeb.Router do
     get "/step3", StepController, :step3
     get "/play", StepController, :play
     get "/mp3", Mp3Controller, :index
+    resources "/subscribers", SubscriberController
 
-    post "/user", UserController, :signup
+    #post "/user", UserController, :signup
     #get "/step3", Step3Controller, :index
     #get "/play", PlayController, :index
   end

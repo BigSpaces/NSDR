@@ -1,5 +1,7 @@
 defmodule NsdrWeb.StepController do
   use NsdrWeb, :controller
+  alias Nsdr.Newsletter
+  alias Nsdr.Newsletter.Subscriber
 
   def step1(conn, _params) do
     IO.puts("HELLO THERE")
@@ -21,8 +23,8 @@ defmodule NsdrWeb.StepController do
         %{"background" => "silence", "choice1" => "nidra", "time" => "short"} -> "/audio/drone.mp3"
 
       end
-
-     render(conn, "play.html", [incoming_params: incoming_params, fileurl: fileurl])
+     changeset = Newsletter.change_subscriber(%Subscriber{})
+     render(conn, "play.html", [incoming_params: incoming_params, fileurl: fileurl, changeset: changeset])
   end
 
 end
