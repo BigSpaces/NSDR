@@ -18,7 +18,6 @@ defmodule NsdrWeb.StepController do
   end
 
   def play(conn, incoming_params) do
-     IO.inspect(incoming_params, label: "PARAMS")
       fileurl = case incoming_params do
         %{"background" => "silence", "choice1" => "nidra", "time" => "short"} -> "/audio/drone.mp3"
 
