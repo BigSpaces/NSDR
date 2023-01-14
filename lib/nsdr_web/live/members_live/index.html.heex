@@ -1,0 +1,41 @@
+<h1>Listing Member</h1>
+
+<%= if @live_action in [:new, :edit] do %>
+  <.modal return_to={Routes.members_index_path(@socket, :index)}>
+    <.live_component
+      module={NsdrWeb.MembersLive.FormComponent}
+      id={@members.id || :new}
+      title={@page_title}
+      action={@live_action}
+      members={@members}
+      return_to={Routes.members_index_path(@socket, :index)}
+    />
+  </.modal>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody id="member">
+    <%= for members <- @member do %>
+      <tr id={"members-#{members.id}"}>
+        <td><%= members.name %></td>
+        <td><%= members.email %></td>
+
+        <td>
+          <span><%= live_redirect "Show", to: Routes.members_show_path(@socket, :show, members) %></span>
+          <span><%= live_patch "Edit", to: Routes.members_index_path(@socket, :edit, members) %></span>
+          <span><%= link "Delete", to: "#", phx_click: "delete", phx_value_id: members.id, data: [confirm: "Are you sure?"] %></span>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<span><%= live_patch "New Members", to: Routes.members_index_path(@socket, :new) %></span>

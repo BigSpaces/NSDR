@@ -1,13 +1,14 @@
 <p>Hello World And Mars!</p>
-
+<%= @mykey %>
+<%= Routes.static_path(@conn, "/assets/drone.mp3") %>
 <audio
         controls
-        src={Routes.static_path(@conn, "/assets/drone.mp3")}>
-            <a href={Routes.static_path(@conn, "/assets/drone.mp3")}>
+        src={Routes.static_path(@conn, "/audio/drone.mp3")}>
+            <a href={Routes.static_path(@conn, "/audio/drone.mp3")}>
                 Download audio
             </a>
     </audio>
 
-<audio src={Routes.static_path(@conn, "/assets/drone.mp3")}>
+<audio src={Routes.static_path(@conn, "/audio/drone.mp3")}>
     Your browser does not support the <code>audio</code> element.
 </audio>
