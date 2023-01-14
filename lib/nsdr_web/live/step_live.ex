@@ -43,7 +43,7 @@ defmodule NsdrWeb.StepLive do
 
 
       <div class="flex w-screen justify-center items-center ">
-        <div class="lg:grid-rows-1 lg:grid-cols-3 grid-cols-1 grid-rows-3">
+        <div class="grid gap-6 grid-rows-3 lg:grid-cols-3">
 
          <.option_card title="Nidra / NSDR" link={next_link} option="nidra">
          Enjoy conscious rest. One hour of NSDR or Nidra is said to be equivalent to three hours of sleep
@@ -215,12 +215,11 @@ defmodule NsdrWeb.StepLive do
 
   def option_card(assigns) do
     ~H"""
-      <div class="py-4">
-      <div class="mx-8 w-80 border-4 border-neutral-200 h-48 rounded-md bg-slate-300  divide-y">
+      <div class="w-80 border-4 border-neutral-200 h-48 rounded-md bg-slate-300  divide-y">
         <h3 class="hover:bg-slate-400 pt-4 pb-2 text-xl text-stone-800 text-center font-heebo">
         <%= live_patch @title, [to: assigns.link<>assigns.option] %></h3>
         <p class="p-8 text-stone-800 text-center font-mukta"><%= render_slot(@inner_block) %></p>
-      </div></div>
+      </div>
     """
   end
 
