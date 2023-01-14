@@ -17,11 +17,15 @@ defmodule NsdrWeb.Router do
 
   scope "/", NsdrWeb do
     pipe_through :browser
-
-    get "/", StepController, :step1
-    get "/step2", StepController, :step2
-    get "/step3", StepController, :step3
-    get "/play", StepController, :play
+    live "/", StepLive, :step1
+    live "/step2", StepLive, :step2
+    live "/step3", StepLive, :step3
+    live "/play", StepLive, :play
+    
+    #get "/", StepController, :step1
+    #get "/step2", StepController, :step2
+    #get "/step3", StepController, :step3
+    #get "/play", StepController, :play
     get "/mp3", Mp3Controller, :index
     resources "/subscribers", SubscriberController
 

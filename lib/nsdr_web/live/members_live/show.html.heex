@@ -1,0 +1,31 @@
+<h1>Show Members</h1>
+
+<%= if @live_action in [:edit] do %>
+  <.modal return_to={Routes.members_show_path(@socket, :show, @members)}>
+    <.live_component
+      module={NsdrWeb.MembersLive.FormComponent}
+      id={@members.id}
+      title={@page_title}
+      action={@live_action}
+      members={@members}
+      return_to={Routes.members_show_path(@socket, :show, @members)}
+    />
+  </.modal>
+<% end %>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @members.name %>
+  </li>
+
+  <li>
+    <strong>Email:</strong>
+    <%= @members.email %>
+  </li>
+
+</ul>
+
+<span><%= live_patch "Edit", to: Routes.members_show_path(@socket, :edit, @members), class: "button" %></span> |
+<span><%= live_redirect "Back", to: Routes.members_index_path(@socket, :index) %></span>
