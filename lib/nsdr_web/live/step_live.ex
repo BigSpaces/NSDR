@@ -134,7 +134,7 @@ defmodule NsdrWeb.StepLive do
 
     ~H"""
     <div class="h-screen w-screen grid justify-center items-center">
-        <p class="text-xl text-center text-slate-50 text-center font-mukta">Your practice is ready! </p>
+        <p class="text-xl text-center text-slate-50 text-center font-mukta">Your practice is about to begin! </p>
 
                 <p class="text-center text-xl text-slate-50 font-mukta"><%= message_to_user(@choice1, @duration, @background) %></p>
                 <p class="text-center text-xl text-slate-50 font-mukta">Dispense with any distractions, and press play. May you benefit from this practice.</p>
