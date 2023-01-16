@@ -8,7 +8,7 @@ defmodule NsdrWeb.Router do
     plug :put_root_layout, {NsdrWeb.LayoutView, :root}
     plug :protect_from_forgery
     plug :put_secure_browser_headers
-   # plug NsdrWeb.Mp3Plug
+    # plug NsdrWeb.Mp3Plug
   end
 
   pipeline :api do
@@ -21,17 +21,7 @@ defmodule NsdrWeb.Router do
     live "/step2", StepLive, :step2
     live "/step3", StepLive, :step3
     live "/play", StepLive, :play
-    
-    #get "/", StepController, :step1
-    #get "/step2", StepController, :step2
-    #get "/step3", StepController, :step3
-    #get "/play", StepController, :play
-    get "/mp3", Mp3Controller, :index
-    resources "/subscribers", SubscriberController
 
-    #post "/user", UserController, :signup
-    #get "/step3", Step3Controller, :index
-    #get "/play", PlayController, :index
   end
 
   # Other scopes may use custom stacks.

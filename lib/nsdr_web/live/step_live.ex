@@ -1,24 +1,17 @@
 defmodule NsdrWeb.StepLive do
-
   use Phoenix.LiveView
   use Phoenix.HTML
   use NsdrWeb, :live_view
   alias Nsdr.Mailing
   alias Nsdr.Mailing.Members
 
-
-
   def mount(_params, _session, socket) do
-
     changeset = Mailing.change_members(%Members{})
     new_socket = assign(socket, changeset: changeset)
     {:ok, new_socket}
   end
 
-
   def render(assigns) do
-
-
     ~H"""
       <%= if assigns.live_action == :step1 do %>
       <.step1 />
@@ -40,7 +33,9 @@ defmodule NsdrWeb.StepLive do
     next_link = "step2?choice1="
 
     ~H"""
-
+      <div class="w-screen my-4 flex text-white grid text-center text-lg font-mukta"><strong>Welcome!</strong></div>
+      <div class="w-screen my-2 px-10 flex text-white grid text-center text-l font-mukta">In this site you can craft a customized meditative practice.</div>
+      <div class="w-screen my-2 mb-10 px-10 flex text-white grid text-center text-l font-mukta">Please begin by selecting the type of practice that suits you today.</div>
 
       <div class="flex w-screen justify-center items-center ">
         <div class="grid gap-6 grid-rows-3 lg:grid-cols-3">
@@ -60,12 +55,16 @@ defmodule NsdrWeb.StepLive do
   end
 
   def step2(assigns) do
-
     next_link = "/step3?choice1=#{assigns.choice1}&duration="
 
     ~H"""
+      <div class="w-screen my-4 flex text-white grid text-center text-lg font-mukta"><strong>Fantastic choice!</strong></div>
+      <div class="w-screen my-2 px-10 flex text-white grid text-center text-l font-mukta">Now... how long do you have to practice?</div>
+      <div class="w-screen my-2 mb-10 px-10 flex text-white grid text-center text-l font-mukta">In this type of business what matters most is that you take the time.</div>
+
+
        <div class="flex w-screen justify-center items-center ">
-        <div class="lg:grid-rows-1 lg:grid-cols-3 grid-cols-1 grid-rows-3">
+       <div class="grid gap-6 grid-rows-3 lg:grid-cols-3">
          <.option_card title="Short (5 to 10 mins)" link={next_link} option="short">
          Sometimes a few minutes is all you need.
          </.option_card>
@@ -81,12 +80,15 @@ defmodule NsdrWeb.StepLive do
   end
 
   def step3(assigns) do
-
     next_link = "play?choice1=#{assigns.choice1}&duration=#{assigns.duration}&background="
 
     ~H"""
+    <div class="w-screen my-4 flex text-white grid text-center text-lg font-mukta"><strong>Almost there...</strong></div>
+    <div class="w-screen my-2 px-10 flex text-white grid text-center text-l font-mukta">What is your preference when it comes to background?</div>
+     <div class="w-screen my-2 mb-10 px-10 flex text-white grid text-center text-l font-mukta">Whatever helps your mind quiet down is a good choice.</div>
+
        <div class="flex w-screen justify-center items-center ">
-        <div class="lg:grid-rows-1 lg:grid-cols-3 grid-cols-1 grid-rows-3">
+       <div class="grid gap-6 grid-rows-3 lg:grid-cols-3">
          <.option_card title="No background" link={next_link} option="silence" >
          No music, no ambient track. Zip, nada.
          </.option_card>
@@ -109,14 +111,16 @@ defmodule NsdrWeb.StepLive do
         "antar" -> "inner silence practice. "
         _ -> "practice."
       end
-        duration_message =
+
+    duration_message =
       case duration do
         "short" -> "between 5 and 10 minutes. "
         "medium" -> "about half an hour. "
         "long" -> "one full hour. "
         _ -> "whatever time it takes you to complete. "
       end
-        background_message =
+
+    background_message =
       case background do
         "silence" -> "perfect silence in the background. "
         "music" -> "some nice background music. "
@@ -125,29 +129,25 @@ defmodule NsdrWeb.StepLive do
       end
 
     "You have chosen a #{choice1_message} It will take you #{duration_message} You will enjoy #{background_message}"
-
   end
 
   def play(assigns) do
-
     fileurl = ""
 
     ~H"""
-    <div class="h-screen w-screen grid justify-center items-center">
-        <p class="text-xl text-center text-slate-50 text-center font-mukta">Your practice is about to begin! </p>
+    <div class="w-screen grid justify-center items-center">
+    <div class="w-screen my-4 flex text-white grid text-center text-lg font-mukta"><strong>Your practice is about to begin!</strong> </div>
 
-                <p class="text-center text-xl text-slate-50 font-mukta"><%= message_to_user(@choice1, @duration, @background) %></p>
-                <p class="text-center text-xl text-slate-50 font-mukta">Dispense with any distractions, and press play. May you benefit from this practice.</p>
-                    <div class="w-100">
+    <div class="w-screen my-4 px-10 flex text-white grid text-center text-l font-mukta"><%= message_to_user(@choice1, @duration, @background) %></div>
+    <div class="w-screen my-4 px-10 flex text-white grid text-center text-l font-mukta">Dispense with any distractions and press play. May you benefit from this practice.</div>
+
+                    <div class="border-4 p-4 w-42 bg-slate-400 place-self-center">
 
                         <.meditation_player></.meditation_player>
 
                     </div>
                 <br>
-
-
-                <p class="text-center text-xl text-slate-50 text-center font-mukta">There is too much tension in the world. Please consider telling others about this page, and stay up to date by subscribing to our newsletter below.</p>
-
+    <div class="w-screen my-4 px-10 flex text-white grid text-center text-l font-mukta">Please consider subscribing to our newsletter below to stay up to date with new developments.</div>
     <div class="text-center text-xl text-slate-50 text-center font-mukta">
 
     <.my_form changeset={assigns.changeset}>
@@ -155,8 +155,6 @@ defmodule NsdrWeb.StepLive do
     </div></div>
     """
   end
-
-
 
   def my_form(assigns) do
     ~H"""
@@ -184,8 +182,10 @@ defmodule NsdrWeb.StepLive do
     <source src="/audio/narration.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
     </audio>
+    <div class="border-4">
     <button class="font-mukta text-white bg-gradient-to-r from-gray-500 via-gray-600 to-gray-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-gray-300 dark:focus:ring-gray-800 shadow-lg shadow-gray-500/50 dark:shadow-lg dark:shadow-gray-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2" onclick="document.getElementById('background').play(); document.getElementById('narration').play()">Play</button>
     <button class="font-mukta text-white bg-gradient-to-r from-gray-500 via-gray-600 to-gray-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-gray-300 dark:focus:ring-gray-800 shadow-lg shadow-gray-500/50 dark:shadow-lg dark:shadow-gray-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2" onclick="document.getElementById('background').pause(); document.getElementById('narration').pause()">Pause</button>
+    </div>
     """
   end
 
@@ -229,8 +229,5 @@ defmodule NsdrWeb.StepLive do
     changeset = Mailing.change_members(%Members{})
     new_socket = assign(socket, changeset: changeset)
     {:ok, new_socket}
-
   end
-
-
 end
