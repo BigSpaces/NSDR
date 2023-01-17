@@ -135,11 +135,11 @@ defmodule NsdrWeb.StepLive do
     fileurl = ""
 
     ~H"""
-    <div class="w-screen grid justify-center items-center">
+    <div class="w-screen grid">
     <div class="w-screen my-4 flex text-white grid text-center text-lg font-mukta"><strong>Your practice is about to begin!</strong> </div>
 
-    <div class="w-screen my-4 px-10 flex text-white grid text-center text-l font-mukta"><%= message_to_user(@choice1, @duration, @background) %></div>
-    <div class="w-screen my-4 px-10 flex text-white grid text-center text-l font-mukta">Dispense with any distractions and press play. May you benefit from this practice.</div>
+    <div class="place-self-center lg:w-4/12 my-4 px-10 flex text-white grid text-center text-l font-mukta"><%= message_to_user(@choice1, @duration, @background) %></div>
+    <div class="place-self-center lg:w-4/12 my-4 px-10 flex text-white grid text-center text-l font-mukta">Dispense with any distractions and press play. May you benefit from this practice.</div>
 
                     <div class="border-4 p-4 w-42 bg-slate-400 place-self-center">
 
@@ -147,27 +147,26 @@ defmodule NsdrWeb.StepLive do
 
                     </div>
                 <br>
-    <div class="w-screen my-4 px-10 flex text-white grid text-center text-l font-mukta">Please consider subscribing to our newsletter below to stay up to date with new developments.</div>
-    <div class="text-center text-xl text-slate-50 text-center font-mukta">
+    <div class="place-self-center lg:w-4/12 my-4 pb-4 px-10 flex text-white grid text-center text-l font-mukta">Please consider subscribing to our newsletter below to stay up to date with new developments.</div>
 
-    <.my_form changeset={assigns.changeset}>
-    </.my_form>
-    </div></div>
+        
+        <.my_form changeset={assigns.changeset}>
+        </.my_form>
+
+    </div>
     """
   end
 
   def my_form(assigns) do
     ~H"""
-    <.form class="text-black" let={f} for={@changeset} phx-submit="save">
-    <%= label f, :name %>
-    <%= text_input f, :name %>
-    <%= error_tag f, :name %>
-    <%= label f, :email %>
-    <%= text_input f, :email %>
-    <%= error_tag f, :email %>
-
-    <br>
-    <%= submit "Save" %>
+    <.form class="text-white text-center text-xl font-mukta" let={f} for={@changeset} phx-change="validate" phx-submit="save">
+    <div class=""><%= label f, :name %></div>
+    <%= text_input f, :name, class: "py-2 mb-4 text-black" %>
+    <div class="text-black"><%= error_tag f, :name %></div>
+    <div><%= label f, :email %></div>
+    <%= email_input f, :email, class: "py-2 mb-4 text-black" %>
+    <div class="text-black"><%= error_tag f, :email %></div>
+    <%= submit "Submit", class: "w-40 font-mukta text-white bg-gradient-to-r from-gray-500 via-gray-600 to-gray-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-gray-300 dark:focus:ring-gray-800 shadow-lg shadow-gray-500/50 dark:shadow-lg dark:shadow-gray-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mb-2" %>
     </.form>
     """
   end
@@ -182,7 +181,7 @@ defmodule NsdrWeb.StepLive do
     <source src="/audio/narration.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
     </audio>
-    <div class="border-4">
+    <div class="">
     <button class="font-mukta text-white bg-gradient-to-r from-gray-500 via-gray-600 to-gray-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-gray-300 dark:focus:ring-gray-800 shadow-lg shadow-gray-500/50 dark:shadow-lg dark:shadow-gray-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2" onclick="document.getElementById('background').play(); document.getElementById('narration').play()">Play</button>
     <button class="font-mukta text-white bg-gradient-to-r from-gray-500 via-gray-600 to-gray-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-gray-300 dark:focus:ring-gray-800 shadow-lg shadow-gray-500/50 dark:shadow-lg dark:shadow-gray-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2" onclick="document.getElementById('background').pause(); document.getElementById('narration').pause()">Pause</button>
     </div>
@@ -190,8 +189,6 @@ defmodule NsdrWeb.StepLive do
   end
 
   def handle_params(params, uri, socket) do
-    IO.inspect(params, label: "INSPARAMS")
-
     new_socket =
       assign(socket,
         choice1: params["choice1"],
@@ -200,7 +197,6 @@ defmodule NsdrWeb.StepLive do
         uri: uri
       )
 
-    IO.inspect(new_socket.assigns, label: "AFTERASSIGNS")
     {:noreply, new_socket}
   end
 
@@ -224,10 +220,26 @@ defmodule NsdrWeb.StepLive do
   end
 
   def handle_event("save", %{"members" => subscriber_params}, socket) do
-    IO.inspect(subscriber_params, label: "AM I SAVED?")
-    Mailing.create_members(subscriber_params) |> IO.inspect(label: "CREATE MEMBERS")
-    changeset = Mailing.change_members(%Members{})
-    new_socket = assign(socket, changeset: changeset)
-    {:ok, new_socket}
+    case Mailing.create_members(subscriber_params) do
+      {:ok, _member} ->
+        new_changeset = Mailing.change_members(%Members{})
+        new_socket = assign(socket, changeset: new_changeset)
+        {:noreply, new_socket}
+
+      {:error, changeset} ->
+        {:noreply, assign(socket, changeset: changeset)}
+    end
   end
+
+
+  def handle_event("validate", %{"members" => members_params}, socket) do
+
+    changeset =
+      %Members{}
+      |> Mailing.change_members(members_params)
+      |> Map.put(:action, :validate)
+
+    {:noreply, assign(socket, :changeset, changeset)}
+  end
+
 end
