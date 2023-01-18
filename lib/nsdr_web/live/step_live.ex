@@ -149,7 +149,7 @@ defmodule NsdrWeb.StepLive do
                 <br>
     <div class="place-self-center lg:w-4/12 my-4 pb-4 px-10 flex text-white grid text-center text-l font-mukta">Please consider subscribing to our newsletter below to stay up to date with new developments.</div>
 
-        
+
         <.my_form changeset={assigns.changeset}>
         </.my_form>
 
@@ -241,5 +241,8 @@ defmodule NsdrWeb.StepLive do
 
     {:noreply, assign(socket, :changeset, changeset)}
   end
+
+
+
 
 end

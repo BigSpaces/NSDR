@@ -21,6 +21,7 @@ defmodule NsdrWeb.Router do
     live "/step2", StepLive, :step2
     live "/step3", StepLive, :step3
     live "/play", StepLive, :play
+    forward "/mailbox", Plug.Swoosh.MailboxPreview
   end
 
   # Other scopes may use custom stacks.
