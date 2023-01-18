@@ -1,6 +1,4 @@
 defmodule NsdrWeb.StepLive do
-  use Phoenix.LiveView
-  use Phoenix.HTML
   use NsdrWeb, :live_view
   alias Nsdr.Mailing
   alias Nsdr.Mailing.Members
@@ -222,7 +220,7 @@ defmodule NsdrWeb.StepLive do
         Newsletter.Emails.welcome(%{email: subscriber_params["email"], name: subscriber_params["name"]})
         |> Nsdr.Mailer.deliver()
         |> IO.inspect(label: "EMAIL SENT")
-        
+
         {:noreply, new_socket}
 
       {:error, changeset} ->
