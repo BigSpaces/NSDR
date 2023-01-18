@@ -24,7 +24,13 @@ config :nsdr, NsdrWeb.Endpoint,
 #
 # For production it's recommended to configure a different adapter
 # at the `config/runtime.exs`.
-config :nsdr, Nsdr.Mailer, adapter: Swoosh.Adapters.Local
+# config :nsdr, Nsdr.Mailer, adapter: Swoosh.Adapters.Local
+
+config :nsdr, Nsdr.Mailer,
+  adapter: Swoosh.Adapters.Sendgrid,
+  # api_key: System.get_env("SENDGRID_API_KEY")
+  api_key: ""
+config :swoosh, :api_client, Swoosh.ApiClient.Hackney
 
 # Swoosh API client is needed for adapters other than SMTP.
 config :swoosh, :api_client, false
