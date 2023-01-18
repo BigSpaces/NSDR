@@ -29,7 +29,7 @@ config :nsdr, NsdrWeb.Endpoint,
 config :nsdr, Nsdr.Mailer,
   adapter: Swoosh.Adapters.Sendgrid,
   # api_key: System.get_env("SENDGRID_API_KEY")
-  api_key: "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"
+  api_key: ""
 config :swoosh, :api_client, Swoosh.ApiClient.Hackney
 
 # Swoosh API client is needed for adapters other than SMTP.
