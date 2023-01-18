@@ -142,17 +142,12 @@ defmodule NsdrWeb.StepLive do
     <div class="place-self-center lg:w-4/12 my-4 px-10 flex text-white grid text-center text-l font-mukta">Dispense with any distractions and press play. May you benefit from this practice.</div>
 
                     <div class="border-4 p-4 w-42 bg-slate-400 place-self-center">
-
                         <.meditation_player></.meditation_player>
-
                     </div>
                 <br>
     <div class="place-self-center lg:w-4/12 my-4 pb-4 px-10 flex text-white grid text-center text-l font-mukta">Please consider subscribing to our newsletter below to stay up to date with new developments.</div>
-
-
         <.my_form changeset={assigns.changeset}>
         </.my_form>
-
     </div>
     """
   end
@@ -222,8 +217,12 @@ defmodule NsdrWeb.StepLive do
   def handle_event("save", %{"members" => subscriber_params}, socket) do
     case Mailing.create_members(subscriber_params) do
       {:ok, _member} ->
-        new_changeset = Mailing.change_members(%Members{})
-        new_socket = assign(socket, changeset: new_changeset)
+        new_socket = assign(socket, changeset: Mailing.change_members(%Members{}))
+        IO.inspect(subscriber_params, label: "NEW SUBSCRIBER")
+        Newsletter.Emails.welcome(%{email: subscriber_params["email"], name: subscriber_params["name"]})
+        |> Nsdr.Mailer.deliver()
+        |> IO.inspect(label: "EMAIL SENT")
+        
         {:noreply, new_socket}
 
       {:error, changeset} ->
@@ -231,9 +230,7 @@ defmodule NsdrWeb.StepLive do
     end
   end
 
-
   def handle_event("validate", %{"members" => members_params}, socket) do
-
     changeset =
       %Members{}
       |> Mailing.change_members(members_params)
@@ -241,8 +238,4 @@ defmodule NsdrWeb.StepLive do
 
     {:noreply, assign(socket, :changeset, changeset)}
   end
-
-
-
-
 end
