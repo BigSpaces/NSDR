@@ -28,12 +28,12 @@ config :nsdr, NsdrWeb.Endpoint,
 
 config :nsdr, Nsdr.Mailer,
   adapter: Swoosh.Adapters.Sendgrid,
-  # api_key: System.get_env("SENDGRID_API_KEY")
-  api_key: ""
+  api_key: System.get_env("SENDGRID_API")
+
 config :swoosh, :api_client, Swoosh.ApiClient.Hackney
 
 # Swoosh API client is needed for adapters other than SMTP.
-config :swoosh, :api_client, false
+# config :swoosh, :api_client, false
 
 # Configure esbuild (the version is required)
 config :esbuild,

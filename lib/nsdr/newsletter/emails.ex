@@ -12,4 +12,5 @@ defmodule Newsletter.Emails do
     |> html_body("<h1>Hola #{user.name}, ahora puedes practicar meditaciones personalizadas</h1>")
     |> text_body("Hola #{user.name}\n, espero que te haya gustado la aplicación")
   end
+  
 end
