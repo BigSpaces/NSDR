@@ -32,6 +32,6 @@ nsdr-*.tar
 npm-debug.log
 /assets/node_modules/
 
-# Environment Variables
+# Environment Variables API KEY
 .env
 /.env
