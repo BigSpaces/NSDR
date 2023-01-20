@@ -208,8 +208,6 @@ defmodule NsdrWeb.StepLive do
   end
 
   def meditation_player(assigns) do
-
-    IO.inspect(assigns, label: "MEDPLAYER")
     ~H"""
     <audio id="background" class="hidden" controls>
     <source src={@choices[:background]}  type="audio/mpeg">
